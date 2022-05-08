@@ -6,8 +6,8 @@ all: build run
 
 build:
 	@echo "Compile Program <3"
-	$(CC) -o newProgramm $(SRC)
+	$(CC) -o newProgram $(SRC)
 run:
 	@echo "Exectue Compiled Program"
 	
-	./newProgramm
+	./newProgram
