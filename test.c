@@ -9,6 +9,13 @@
 #define ANSI_COLOR_CYAN    "\x1b[36m"
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
+void describe(char* name) {
+    printf(ANSI_COLOR_CYAN "=========================" ANSI_COLOR_RESET);
+    printf("Test: %s", name);
+    printf(ANSI_COLOR_CYAN "=========================" ANSI_COLOR_RESET);
+    return;
+}
+
 int test(char* name, int result) {
     if(result) {
         printf(ANSI_COLOR_GREEN "Success" ANSI_COLOR_RESET " < %s \n", name);

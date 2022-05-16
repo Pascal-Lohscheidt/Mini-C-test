@@ -1,3 +1,4 @@
+void describe(char* name);
 int test(char* name, int result);
 
 int expectEqual(char* actual, char* expected);
