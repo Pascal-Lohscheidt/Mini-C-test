@@ -12,7 +12,7 @@
 void describe(char* name) {
     printf(ANSI_COLOR_CYAN "=========================" ANSI_COLOR_RESET);
     printf("Test: %s", name);
-    printf(ANSI_COLOR_CYAN "=========================" ANSI_COLOR_RESET);
+    printf(ANSI_COLOR_CYAN "=========================\n" ANSI_COLOR_RESET);
     return;
 }
 
