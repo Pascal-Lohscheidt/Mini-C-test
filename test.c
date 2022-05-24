@@ -27,6 +27,45 @@ int test(char* name, int result) {
     }
 }
 
+int expectFloatEqual(float actual, float expected) {
+  if(actual != expected) {
+      printf("=> Numbers not equal \n");
+      printf(ANSI_COLOR_YELLOW "Actual: >%f<" ANSI_COLOR_RESET "\n", actual);
+      printf(ANSI_COLOR_YELLOW "Expected: >%f<" ANSI_COLOR_RESET "\n", expected);
+      return 0;
+  }
+  return 1;
+}
+
+int expectDoubleEqual(double actual, double expected){
+  if(actual != expected) {
+      printf("=> Numbers not equal \n");
+      printf(ANSI_COLOR_YELLOW "Actual: >%lf<" ANSI_COLOR_RESET "\n", actual);
+      printf(ANSI_COLOR_YELLOW "Expected: >%lf<" ANSI_COLOR_RESET "\n", expected);
+      return 0;
+  }
+  return 1;
+}
+
+int expectIntEqual(int actual, int expected){
+  if(actual != expected) {
+      printf("=> Numbers not equal \n");
+      printf(ANSI_COLOR_YELLOW "Actual: >%d<" ANSI_COLOR_RESET "\n", actual);
+      printf(ANSI_COLOR_YELLOW "Expected: >%d<" ANSI_COLOR_RESET "\n", expected);
+      return 0;
+  }
+  return 1;
+}
+int expectLongEqual(long actual, long expected){
+  if(actual != expected) {
+      printf("=> Numbers not equal \n");
+      printf(ANSI_COLOR_YELLOW "Actual: >%ld<" ANSI_COLOR_RESET "\n", actual);
+      printf(ANSI_COLOR_YELLOW "Expected: >%ld<" ANSI_COLOR_RESET "\n", expected);
+      return 0;
+  }
+  return 1;
+}
+
 
 int expectByteEqual(char* actual, char* expected, int length) {
     for(int i = 0; i < length; i++) {
@@ -38,12 +77,12 @@ int expectByteEqual(char* actual, char* expected, int length) {
                     printf("%02u ", expected[z]);
                 else
                     printf(ANSI_COLOR_RED"%02u "ANSI_COLOR_GREEN, expected[z]);
-                    
+
             }
-            
+
             printf("\n");
             printf(ANSI_COLOR_RESET"Actual:   "ANSI_COLOR_GREEN);
-            
+
             for(int z = 0; z < length; z++) {
                 if(actual[z] == expected[z])
                     printf("%02u ", actual[z]);
@@ -54,7 +93,7 @@ int expectByteEqual(char* actual, char* expected, int length) {
             return 0;
         }
     }
-    
+
     return 1;
 }
 
@@ -66,7 +105,7 @@ int expectEqual(char* actual, char* expected) {
         printf(ANSI_COLOR_YELLOW "Expected: >%s<" ANSI_COLOR_RESET "\n", expected);
         return 0;
     }
-    
+
     return 1;
 }
 
@@ -76,6 +115,6 @@ int expectNotEqual(char* actual, char* expected) {
         printf(ANSI_COLOR_YELLOW ">%s< should not be >%s< \n" ANSI_COLOR_RESET, actual, expected);
         return 0;
     }
-    
+
     return 1;
 }
